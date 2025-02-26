@@ -14,6 +14,7 @@ def tasks():
             priority=data['priority'],
             progress=data['progress'],
             created_by=data['created_by'],
+            assigned_to=data['assigned_to'],
             created_at=data['created_at']
         )
         task.save()
