@@ -1,6 +1,6 @@
 from flask import Blueprint, request, jsonify
 from models.tasks import Task
-from database import mongo
+from database import db
 
 tasks_bp = Blueprint('tasks', __name__)
 
@@ -18,22 +18,20 @@ def tasks():
             created_by=data.get('created_by', ''),
             assigned_to=data.get('assigned_to', '')
         )
-        result = mongo.db.tasks.insert_one(task.to_dict())
+        result = db.tasks.insert_one(task.to_dict())
         return jsonify({
             'status': 'Task created successfully',
             'task_id': str(result.inserted_id)
         })
     else:
-        tasks_find = mongo.db.tasks.find()
+        tasks_find = db.tasks.find()
         task_list = []
 
         for task in tasks_find:
             task_id = str(task['_id'])
             
-            # Create Task object from document
             task = Task.from_dict(task)
             
-            # Get dictionary and add ID
             task_data = task.to_dict()
             task_data['_id'] = task_id
 
