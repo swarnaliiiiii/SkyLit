@@ -1,4 +1,4 @@
-class tasks:
+class Task:
   def __init__(self, Title, description, due_date, priority, progress,task_id = None, created_by=None, created_at=None):
     self.task_id = task_id
     self.Title = Title
