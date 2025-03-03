@@ -3,6 +3,7 @@ from models.tasks import Task
 
 tasks_bp = Blueprint('tasks', __name__)
 
+
 @tasks_bp.route('tasks', methods=['GET', 'POST'])
 def tasks():
     if request.method == 'POST':
