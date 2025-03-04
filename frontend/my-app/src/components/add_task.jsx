@@ -142,21 +142,6 @@ function AddTask() {
                                 placeholder="Your name"
                             />
                         </div>
-                        
-                        {/* Assigned To */}
-                        <div>
-                            <label htmlFor="assigned_to" className="block text-sm font-medium text-gray-700 mb-1">
-                                Assigned To
-                            </label>
-                            <input
-                                type="text"
-                                id="assigned_to"
-                                value={assigned_to}
-                                onChange={(e) => setAssignedTo(e.target.value)}
-                                className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                                placeholder="Assignee name"
-                            />
-                        </div>
                     </div>
                     
                     {/* Submit Button */}
