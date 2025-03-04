@@ -8,7 +8,6 @@ function AddTask() {
     const [priority, setPriority] = useState('medium')
     const [progress, setProgress] = useState('not started')
     const [created_by, setCreatedBy] = useState('')
-    const [assigned_to, setAssignedTo] = useState('')
     
     const addTask = async () => {
         const response = await fetch('http://localhost:5000/tasks', {
@@ -23,7 +22,6 @@ function AddTask() {
                 priority,
                 progress,
                 created_by,
-                assigned_to
             })
         })
         const data = await response.json()
@@ -34,7 +32,6 @@ function AddTask() {
         setPriority('medium')
         setProgress('not started')
         setCreatedBy('')
-        setAssignedTo('')
     }
     
     return (
