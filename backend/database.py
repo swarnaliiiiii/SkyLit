@@ -6,3 +6,5 @@ uri = "mongodb+srv://bswarnali78:Swarnali0325@jar.8psnl.mongodb.net/?retryWrites
 client = MongoClient(uri, server_api=ServerApi('1'))
 
 db = client.get_database('Tasks')
+
+collection = db.get_collection('SkyLit')
