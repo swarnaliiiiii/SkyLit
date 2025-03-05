@@ -16,7 +16,6 @@ def tasks():
             priority=data.get('priority', 'medium'),
             progress=data.get('progress', 'not started'),
             created_by=data.get('created_by', ''),
-            assigned_to=data.get('assigned_to', '')
         )
         result = db.tasks.insert_one(task.to_dict())
         return jsonify({
